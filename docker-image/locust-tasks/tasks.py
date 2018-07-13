@@ -23,7 +23,7 @@ class UserBehavior(TaskSet):
     def on_start(self):
  #       pydevd.settrace('localhost', port=12345, stdoutToServer=True, stderrToServer=True)
         self.client.headers['Content-Type'] = "application/json"
-        response = self.client.post("/graphql", json={"query": "mutation {login(email:\"rlexvold@gmail.com\", password:\"Lutef1sk\"){ access_token, userId}}"})
+        response = self.client.post("/graphql", json={"query": "mutation {login(email:\"robert@robertreich.co\", password:\"1234567A\"){ access_token, userId}}"})
         json_response_dict = response.json()
         self.token = json_response_dict['data']['login']['access_token']
         self.id = json_response_dict['data']['login']['userId']

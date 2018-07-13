@@ -38,7 +38,7 @@ spec:
             - name: LOCUST_MODE
               value: master
             - name: TARGET_HOST
-              value: https://api-gateway.dtp-community.stg.usa.canon.com
+              value: https://canon-api-gateway-uat.canon-cpc.gigsternetwork.com
           ports:
             - name: loc-master-web
               containerPort: 8089
