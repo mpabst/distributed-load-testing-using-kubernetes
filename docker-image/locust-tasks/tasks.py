@@ -16,7 +16,7 @@ class UserBehavior(TaskSet):
     def photoSearch(self):
         self.client.headers['Content-Type'] = "application/json"
         self.client.headers['Authorization'] = "Bearer " + self.token
-        query_string = "{photoExploreSearch(requestingUser: " + str(self.id) + ", userOnly: false, exifStrings: [\"canon\"], industries: [100,101,102], tags: [100,101,102]) {count, id, thumbnailUrl, url}}"
+        query_string = "{photoTagSearch(requestingUser: " + str(self.id) + ", userOnly: false, exifStrings: [\"canon\"], industries: [100,101,102], tags: [100,101,102], limit: 100, skip: 0) { totalCount photos{ thumbnailUrl id } } }"
         print(query_string)
         self.client.post("/graphql", json={"query": query_string})
 
